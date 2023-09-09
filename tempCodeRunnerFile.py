@@ -1,0 +1,1 @@
+rint(number.plusOne())

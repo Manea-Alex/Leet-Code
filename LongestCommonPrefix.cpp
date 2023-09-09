@@ -11,12 +11,16 @@ public:
         char current;
         int ok = 0;
         int size = strs.size();
+        // gets the size and iterates untill the first word is finished, ideally you should get the smallest workd and iterate to its size
         for (int i = 0; i < strs[0].size(); i++)
         {
+            // get the first letter of first word, and then the next and the next because i++
             current = strs[0][i];
             for (int j = 1; j < size; j++)
             {
-                // std::cout << " Current " << current << " Strs[j][i] " << strs[j][i] << "\n";
+                // starts from 1 because strs[0][i] will be the first word, we need to check for the ones up next
+                //  if we find that the current letter is different from the ones of the next words we return - it works like a break and we found the longest suffix
+
                 if (current != strs[j][i])
                     return common;
             }
